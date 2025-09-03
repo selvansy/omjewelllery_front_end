@@ -18,7 +18,7 @@ import {
   LayoutDashboard,
 } from "lucide-react";
 
-import logo from "../../../assets/smj.jpeg";
+import logo from "../../../assets/omlogo.jpg";
 import RouteList from "../../../routes/RouteList";
 import { useLocation, useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";

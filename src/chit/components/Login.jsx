@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import SpinLoading from "./common/spinLoading";
 // import Logo from "../../assets/login.svg"; //aupay default
-import Logo from "../../assets/smj.jpeg";
+import Logo from "../../assets/omlogo.jpg";
 import Background from "../../assets/LoginBg.png";
 import { toast } from "sonner";
 import { Eye, EyeOff } from "lucide-react";
