@@ -92,7 +92,7 @@ const Organisation = () => {
       short_code: orgData?.short_code || "",
       email: orgData?.email || "",
       mobile: orgData?.mobile || "",
-      landline:orgData?.landline || "",
+      // landline:orgData?.landline || "",
       address: orgData?.address || "",
       pincode: orgData?.pincode || "",
       id_country: orgData?.id_country || "",
@@ -404,7 +404,7 @@ const Organisation = () => {
                 )}
               </div>
 
-               <div className="flex flex-col">
+               {/* <div className="flex flex-col">
                 <label className="text-black mb-1 text-sm font-medium">
                   Landline
                 </label>
@@ -419,7 +419,7 @@ const Organisation = () => {
                   className="w-full border-2 border-[#f2f3f8] rounded-md px-3 py-2"
                   placeholder="Enter landline number"
                 />
-              </div>
+              </div> */}
 
               <div className="flex flex-col">
                 <label className="text-black mb-1 text-sm font-medium">

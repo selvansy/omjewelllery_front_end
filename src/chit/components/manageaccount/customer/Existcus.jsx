@@ -35,6 +35,7 @@ const Existcusomer = () => {
   const [totalDocument1, setTotalDocument1] = useState(0);
   const [redeemedSchemesTable, setRedeemedSchemesTable] = useState([]);
   const [cameFromEdit, setCameFromEdit] = useState(false);
+  const [showedit,setshowedit]=useState(false);
 
   useEffect(() => {
     const navigationState = location.state;
@@ -271,6 +272,7 @@ const Existcusomer = () => {
       });
       toast.success(response?.message);
       setLoading(false);
+      setshowedit(true);
 
       const customerId = response?.data?.customerDetails?._id;
       if (customerId) {
@@ -646,13 +648,17 @@ const Existcusomer = () => {
         <div className="flex flex-row justify-between items-center">
           <h1 className="text-md font-bold text-[#232323]">Account Overview</h1>
           <div>
-            <button
-              type="button"
-              className="px-6 py-2 text-sm bg-[#004181] text-white rounded-md"
-              onClick={() => handleEditNavigate(data.customerDetails?._id)}
-            >
-              Edit Profile
-            </button>
+            {showedit ? (
+
+              <button
+                type="button"
+                className="px-6 py-2 text-sm bg-[#004181] text-white rounded-md"
+                onClick={() => handleEditNavigate(data.customerDetails?._id)}
+              >
+                Edit Profile
+              </button>
+
+            ) : ""}
           </div>
         </div>
         <hr className="w-full mt-2" />

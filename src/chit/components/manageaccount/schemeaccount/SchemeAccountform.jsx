@@ -1346,6 +1346,7 @@ const AddSchemeAccount = ({ cusData, handleClear }) => {
                     max_weight: selectedOption.max_weight,
                     code: selectedOption.code,
                     noOfDays: selectedOption.noOfDays,
+                    
                   }));
                   setShowReferral(selectedOption.display_referral);
                   if (selectedOption.id_metal) {
@@ -1374,6 +1375,7 @@ const AddSchemeAccount = ({ cusData, handleClear }) => {
                     max_weight: 0,
                     code: 0,
                     noOfDays: "",
+  
                   }));
                 }
               }}
@@ -1457,7 +1459,7 @@ const AddSchemeAccount = ({ cusData, handleClear }) => {
                       step="any"
                       name="weight"
                       // defaultValue={value}
-                      value={formData.weight}
+                      value={formData.weight }
                       onChange={(e) => filterInputchange(e)}
                       onWheel={(e) => e.target.blur()}
                       className="border-[1px] border-gray-300 rounded-md p-2 w-full pr-16 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"

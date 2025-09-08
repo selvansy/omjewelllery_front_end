@@ -87,6 +87,12 @@ export const customStyles = (isReadOnly) => ({
     fontWeight: "500",
     fontSize: "14px",
   }),
+    menuList: (provided) => ({
+      ...provided,
+      paddingTop: 0,
+      // paddingBottom: 0,
+      maxHeight:"230px",
+    }),
 });
 
 const SchemeForm = () => {

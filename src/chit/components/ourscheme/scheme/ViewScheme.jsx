@@ -832,7 +832,7 @@ const ViewScheme = () => {
                     {eyeOpen && (
                       <div
                         ref={popoverRef}
-                        className="absolute z-10 mt-1 bg-white border border-gray-200 rounded-md shadow-lg p-2 w-48"
+                        className="absolute z-10 mt-1 bg-white border border-black rounded-md shadow-lg p-2 w-48"
                       >
                         <div className="grid grid-cols-3 gap-1">
                           {formik.values.fixed_amounts.map((amount, index) => (
@@ -1099,10 +1099,16 @@ const ViewScheme = () => {
                 Description Image
               </label>
               <div className="">
-                <img
-                  className="w-[36px] h-[40px] border rounded-md"
-                  src={`${formik.values.pathUrl}${descriptionImage}`}
-                />
+                {descriptionImage ? (
+                  <img
+                    className="w-[36px] h-[40px] border rounded-md"
+                    src={`${formik.values.pathUrl}${descriptionImage}`}
+                    alt="Description"
+                    onError={(e) => (e.target.style.display = "none")}
+                  />
+                ) : (
+                  <span className="text-gray-500">N/A</span>
+                )}
               </div>
             </div>
 

@@ -53,6 +53,8 @@ function Ledgerdetails({ setIsOpen }) {
     setCurrentPage(1); // Reset to first page when items per page changes
   };
 
+
+
   const handlePageChange = (page) => {
     const pageNumber = Number(page);
     if (
@@ -166,7 +168,30 @@ function Ledgerdetails({ setIsOpen }) {
         <Detail label="Scheme Name" value={ledgerData?.scheme_name} />
         <Detail label="Start Date" value={formatDate(ledgerData?.start_date)} />
         <Detail label="Scheme A/C No" value={ledgerData?.scheme_acc_number} />
-        <Detail label="Maturity Date" value={ledgerData?.maturity_date} />
+        {/* <Detail label="Maturity Date" value={ledgerData?.maturity_date} /> */}
+        {/* <Detail
+          label="Maturity Date"
+          value={
+           ledgerData?.scheme_type ===10 && ledgerData?.maturity_date? ledgerData?.maturity_date : ledgerData?.maturity_date
+              ? ledgerData.maturity_date.replace(/-/g, "/")
+              : "-"
+          }
+        /> */}
+        <Detail
+          label="Maturity Date"
+          value={
+            ledgerData?.maturity_date
+              ? ledgerData.scheme_type === 10
+                ? (() => {
+                  const [year, month, day] = ledgerData.maturity_date.split("-");
+                  return `${day}/${month}/${year}`;
+                })()
+                : ledgerData.maturity_date.replace(/-/g, "/")
+              : "-"
+          }
+        />
+
+
         <Detail label="Classification" value={ledgerData?.id_classification?.name ?? "-"} />
         {ledgerData.scheme_type == 10 || ledgerData.scheme_type == 14 ? (
           <Detail

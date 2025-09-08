@@ -28,6 +28,12 @@ const customSelectStyles = (isReadOnly) => ({
       color: "#232323",
     },
   }),
+    menuList: (provided) => ({
+      ...provided,
+      paddingTop: 0,
+      // paddingBottom: 0,
+      maxHeight:  "230px",
+    }),
 });
 
 export default customSelectStyles;

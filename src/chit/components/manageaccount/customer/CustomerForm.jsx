@@ -586,7 +586,9 @@ const CustomerForm = ({
                     name="firstname"
                     value={formik.values.firstname}
                     onChange={(e) => {
-                      formik.handleChange(e);
+                      const value = e.target.value.replace(/[^a-zA-Z ]/g, "").replace(/^\s+/, "");;
+                      formik.setFieldValue("firstname", value);
+                      // formik.handleChange(e);
                       formik.setFieldTouched("firstname", false);
                     }}
                     className="w-full border-[1px] border-[#f2f3f8] rounded-lg px-3 py-2"
@@ -608,7 +610,9 @@ const CustomerForm = ({
                     name="lastname"
                     value={formik.values.lastname}
                     onChange={(e) => {
-                      formik.handleChange(e);
+                        const value = e.target.value.replace(/[^a-zA-Z ]/g, "").replace(/^\s+/, "");;
+                      formik.setFieldValue("lastname", value);
+                      // formik.handleChange(e);
                       formik.setFieldTouched("lastname", false);
                     }}
                     className="w-full border-[1px] border-[#f2f3f8] rounded-lg px-3 py-2"
